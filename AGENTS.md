@@ -1,4 +1,4 @@
-# bb-plugin-project
+# bb-plugins-project
 
 Multi-plugin repo for Dzaky's BB plugins. Target: publish each plugin on the BB Community marketplace.
 

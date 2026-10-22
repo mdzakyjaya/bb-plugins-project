@@ -1,4 +1,4 @@
-# bb-plugin-project
+# bb-plugins-project
 
 Dzaky's plugins for [BB](https://getbb.app). Each plugin lives in its own directory under `plugins/` and is listed in `.bb/plugins.json`.
 
@@ -13,7 +13,7 @@ Dzaky's plugins for [BB](https://getbb.app). Each plugin lives in its own direct
 Install one plugin at a time. Each plugin has its own release tags, `<plugin>/vX.Y.Z`:
 
 ```
-bb plugin install git:https://github.com/mdzakyjaya/bb-plugin-project.git@^0.1.0 --plugin copy-session-id --tag-prefix copy-session-id/
+bb plugin install git:https://github.com/mdzakyjaya/bb-plugins-project.git@^0.1.0 --plugin copy-session-id --tag-prefix copy-session-id/
 ```
 
 From a local clone:

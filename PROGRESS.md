@@ -8,7 +8,7 @@
 ## Next steps
 
 1. Confirm the copyright name in `LICENSE` and the repository URL in `plugins/copy-session-id/package.json`.
-2. Create the GitHub repo `mdzakyjaya/bb-plugin-project` and push `main`.
+2. Create the GitHub repo `mdzakyjaya/bb-plugins-project` and push `main`.
 3. Tag the release: `git tag copy-session-id/v0.1.0 && git push --tags`.
-4. Test a git install: `bb plugin install git:https://github.com/mdzakyjaya/bb-plugin-project.git@^0.1.0 --plugin copy-session-id --tag-prefix copy-session-id/`.
+4. Test a git install: `bb plugin install git:https://github.com/mdzakyjaya/bb-plugins-project.git@^0.1.0 --plugin copy-session-id --tag-prefix copy-session-id/`.
 5. Submit to the BB Community marketplace with the `submit-a-plugin` skill.
