@@ -11,6 +11,24 @@ On click:
 
 BB's own timeline does not change: there is no API to write into it. The plugin does not touch `~/.bb/bb.db`. Threads of other providers show "Only Claude Code threads are supported".
 
+## Why this plugin exists
+
+Sometimes a BB thread is continued outside BB: the same Claude Code session is resumed in a terminal with `claude --resume <id>`. Those turns go into the session log, but BB does not show them, and a BB thread whose Claude runtime is still loaded does not know about them either. The next BB turn then continues from the old point in the history.
+
+The idea comes from the "reload agent" feature in [Paseo](https://github.com/getpaseo/paseo), which closes the live session and reads the history again from the provider's session file. BB has no API to replace a thread's timeline, so this plugin does the part that BB allows: it shows the outside turns in a side panel and makes the agent load them.
+
+## Manual workaround
+
+The plugin automates a step you can also do by hand:
+
+```
+bb thread stop <threadId>
+```
+
+Then send the next message in BB. The agent cold-resumes the session from the log and has the outside turns in its context. They still do not show in the BB chat. The plugin runs the same stop for you, only when there are outside turns and the thread is not running, and also shows those turns in the **Outside turns** panel.
+
+For this to work, resume the session in the terminal without `--fork-session` (so the turns go into the same session file), and do not use the terminal and BB on the same session at the same time.
+
 ## How the diff works
 
 - From the thread's events (`sdk.threads.events.list`, newest first): the session id is the newest `providerThreadId`. The anchor is the `providerCheckpointId` of the newest `turn/completed` that has one: the uuid of the last log line BB has.
