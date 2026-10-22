@@ -5,7 +5,7 @@
 - `copy-provider-session-id` 0.1.0: done. Renamed from `copy-session-id` because that id already exists in the BB Community marketplace (it copies the BB thread id; this plugin copies the provider session id). Display name: "Copy Provider Session Id".
 - GitHub repo (public): https://github.com/mdzakyjaya/bb-plugins-project. `main` is pushed.
 - Release tag `copy-provider-session-id/v0.1.0` is pushed. The old tag `copy-session-id/v0.1.0` stays on GitHub, unused. Never move a tag.
-- Installed in BB from git: `bb plugin install git:https://github.com/mdzakyjaya/bb-plugins-project.git@^0.1.0 --plugin copy-provider-session-id --tag-prefix copy-provider-session-id/`. Installed and running; not yet re-tested in the UI after the rename.
+- Installed in BB from git: `bb plugin install git:https://github.com/mdzakyjaya/bb-plugins-project.git@^0.1.0 --plugin copy-provider-session-id --tag-prefix copy-provider-session-id/`. Installed and running; tested in the UI after the rename: works.
 - Not submitted to the BB Community marketplace. Dzaky chose local use only for now.
 - `reload-thread` 0.1.0 (Claude Code threads only): built, typechecked, 15 unit tests pass, installed locally from `path:`. Committed, tag `reload-thread/v0.1.0` pushed.
   - Verified with `bb reload-thread check` and the `preview` RPC over HTTP: `thr_w9mez36bbn` shows the 10 turns that ran outside BB; idle threads with no outside turns show 0; a Codex thread shows "Only Claude Code threads are supported".
@@ -18,6 +18,5 @@
 
 ## Next steps
 
-1. Test "Copy Provider Session Id" in the UI after the rename.
-2. Confirm that **Reload from Session** stops the thread and that the next BB message knows the outside turns.
-3. (On hold) Submit to the BB Community marketplace. The `submit-a-plugin` skill was not available in the 2026-10-22 session, so find the submit process first.
+1. Confirm that **Reload from Session** stops the thread and that the next BB message knows the outside turns.
+2. (On hold) Submit to the BB Community marketplace. The `submit-a-plugin` skill was not available in the 2026-10-22 session, so find the submit process first.
