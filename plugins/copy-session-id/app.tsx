@@ -10,7 +10,8 @@ import {
 import type { PluginBrowserBbSdk } from "@get-bb/plugin-sdk/app";
 import { toast } from "sonner";
 
-const PAGE_SIZE = 200;
+// Server maximum for thread event pages; a larger limit is rejected.
+const PAGE_SIZE = 100;
 
 /**
  * Newest provider session id recorded in the thread's events. Scans newest
@@ -45,14 +46,20 @@ export default definePluginApp((app) => {
       label: "Copy Provider Session Id",
       icon: "Copy",
       run: async () => {
-        const id = await findProviderSessionId(sdk, thread.id);
-        if (id === null) {
-          toast.error("This thread has no provider session yet");
-          return;
+        // bb swallows errors thrown from `run`, so surface them as a toast.
+        try {
+          const id = await findProviderSessionId(sdk, thread.id);
+          if (id === null) {
+            toast.error("This thread has no provider session yet");
+            return;
+          }
+          const copied = await experimental_copyToClipboard({ text: id });
+          if (copied) toast.success(`Copied ${id}`);
+          else toast.error("Could not copy to clipboard");
+        } catch (error) {
+          const message = error instanceof Error ? error.message : String(error);
+          toast.error(`Could not read the provider session id: ${message}`);
         }
-        const copied = await experimental_copyToClipboard({ text: id });
-        if (copied) toast.success(`Copied ${id}`);
-        else toast.error("Could not copy to clipboard");
       },
     }),
   });
