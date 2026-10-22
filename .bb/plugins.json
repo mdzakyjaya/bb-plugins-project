@@ -3,7 +3,7 @@
   "schemaVersion": 1,
   "name": "dzaky-bb-plugins",
   "plugins": [
-    { "name": "copy-session-id", "source": "./plugins/copy-session-id" },
+    { "name": "copy-provider-session-id", "source": "./plugins/copy-provider-session-id" },
     { "name": "reload-thread", "source": "./plugins/reload-thread" }
   ]
 }

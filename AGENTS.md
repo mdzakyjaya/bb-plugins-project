@@ -25,6 +25,6 @@ bb plugin logs <id>
 ## Rules
 
 - Keep `bb.description` (under ~140 chars) and `PLUGIN_OVERVIEW.md` consistent. Overview rules: max 4000 chars, `##` headings only, no HTML, images, tables, or task lists, absolute https links only.
-- Release = git tag `<plugin>/vX.Y.Z` (e.g. `copy-session-id/v0.1.0`) matching `version` in that plugin's `package.json`. Never move a tag; publish a fix as a new version.
+- Release = git tag `<plugin>/vX.Y.Z` (e.g. `copy-provider-session-id/v0.1.0`) matching `version` in that plugin's `package.json`. Never move a tag; publish a fix as a new version.
 - Submit to the marketplace with the `submit-a-plugin` skill.
 - `PROGRESS.md` holds the current state. Update it when you change something.

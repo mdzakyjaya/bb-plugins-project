@@ -1,12 +1,12 @@
 {
-  "name": "bb-plugin-copy-session-id",
+  "name": "bb-plugin-copy-provider-session-id",
   "version": "0.1.0",
   "description": "Copy a thread's Claude Code or Codex session id from any thread menu, so you can resume it in a terminal.",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mdzakyjaya/bb-plugins-project.git",
-    "directory": "plugins/copy-session-id"
+    "directory": "plugins/copy-provider-session-id"
   },
   "type": "module",
   "engines": {
@@ -14,7 +14,7 @@
     "bbPluginSdk": ">=0.6.49"
   },
   "bb": {
-    "name": "Copy Session Id",
+    "name": "Copy Provider Session Id",
     "description": "Copy a thread's Claude Code or Codex session id from any thread menu, so you can resume it in a terminal.",
     "branding": {
       "icon": "Copy"

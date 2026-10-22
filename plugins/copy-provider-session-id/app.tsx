@@ -1,4 +1,4 @@
-// bb-plugin-copy-session-id — adds "Copy Provider Session Id" to every thread
+// bb-plugin-copy-provider-session-id — adds "Copy Provider Session Id" to every thread
 // menu (header menu, sidebar row menu, right-click menu, compact drawer).
 // The id is the provider's own session id (Claude Code session, Codex thread),
 // so the thread can be resumed in a terminal, e.g. `claude --resume <id>`.
