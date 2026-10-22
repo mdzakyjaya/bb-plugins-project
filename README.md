@@ -7,6 +7,7 @@ Dzaky's plugins for [BB](https://getbb.app). Each plugin lives in its own direct
 | Plugin | What it does |
 | --- | --- |
 | [copy-session-id](plugins/copy-session-id) | Adds **Copy Provider Session Id** to every thread menu, to resume a thread with `claude --resume <id>` or `codex resume <id>`. |
+| [reload-thread](plugins/reload-thread) | Adds **Reload from Session** to every thread menu: shows Claude Code turns that ran outside BB in a side panel and reloads the session so the agent sees them. |
 
 ## Install
 

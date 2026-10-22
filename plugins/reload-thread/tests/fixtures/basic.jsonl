@@ -1,0 +1,15 @@
+{"type":"queue-operation","operation":"enqueue"}
+{"type":"user","uuid":"u1","parentUuid":null,"isSidechain":false,"promptSource":"sdk","timestamp":"2026-10-01T10:00:00Z","message":{"role":"user","content":"First prompt from bb"}}
+{"type":"assistant","uuid":"a1","parentUuid":"u1","isSidechain":false,"timestamp":"2026-10-01T10:00:01Z","message":{"id":"m1","role":"assistant","content":[{"type":"thinking","thinking":"hmm"}]}}
+{"type":"assistant","uuid":"a2","parentUuid":"a1","isSidechain":false,"message":{"id":"m1","role":"assistant","content":[{"type":"text","text":"Answer one."}]}}
+{"type":"system","subtype":"stop_hook_summary","uuid":"s1","parentUuid":"a2","isSidechain":false}
+{"type":"last-prompt","lastPrompt":"First prompt from bb","leafUuid":"s1"}
+{"type":"user","uuid":"u2","parentUuid":"s1","isSidechain":false,"origin":{"kind":"human"},"promptSource":"typed","timestamp":"2026-10-01T11:00:00Z","message":{"role":"user","content":[{"type":"text","text":"Outside prompt in terminal"}]}}
+{"type":"assistant","uuid":"a3","parentUuid":"u2","isSidechain":false,"message":{"id":"m2","role":"assistant","content":[{"type":"text","text":"Let me look."}]}}
+{"type":"assistant","uuid":"a4","parentUuid":"a3","isSidechain":false,"message":{"id":"m2","role":"assistant","content":[{"type":"tool_use","id":"t1","name":"Bash","input":{"command":"ls -la","description":"List files"}}]}}
+{"type":"assistant","uuid":"x1","parentUuid":"a4","isSidechain":true,"message":{"id":"mx","role":"assistant","content":[{"type":"text","text":"sidechain text"}]}}
+{"type":"user","uuid":"r1","parentUuid":"a4","isSidechain":false,"toolUseResult":{"stdout":"a b"},"message":{"role":"user","content":[{"type":"tool_result","tool_use_id":"t1","content":"file-a\nfile-b"}]}}
+{"type":"user","uuid":"i1","parentUuid":"r1","isSidechain":false,"isMeta":true,"message":{"role":"user","content":"<system-reminder>meta</system-reminder>"}}
+{"type":"user","uuid":"i2","parentUuid":"i1","isSidechain":false,"message":{"role":"user","content":"<command-name>/model</command-name>"}}
+{"type":"assistant","uuid":"a5","parentUuid":"i2","isSidechain":false,"message":{"id":"m3","role":"assistant","content":[{"type":"text","text":"Two files."}]}}
+{"type":"last-prompt","lastPrompt":"Outside prompt in terminal","leafUuid":"a5"}

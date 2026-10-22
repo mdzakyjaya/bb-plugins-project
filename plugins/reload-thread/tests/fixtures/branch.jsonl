@@ -1,0 +1,7 @@
+{"type":"user","uuid":"u1","parentUuid":null,"promptSource":"sdk","message":{"role":"user","content":"Root prompt"}}
+{"type":"assistant","uuid":"a1","parentUuid":"u1","message":{"id":"m1","role":"assistant","content":[{"type":"text","text":"Root answer"}]}}
+{"type":"user","uuid":"u2","parentUuid":"a1","promptSource":"sdk","message":{"role":"user","content":"Dead branch prompt"}}
+{"type":"assistant","uuid":"a2","parentUuid":"u2","message":{"id":"m2","role":"assistant","content":[{"type":"text","text":"Dead branch answer"}]}}
+{"type":"user","uuid":"u3","parentUuid":"a1","origin":{"kind":"human"},"message":{"role":"user","content":"Rewound prompt"}}
+{"type":"assistant","uuid":"a3","parentUuid":"u3","message":{"id":"m3","role":"assistant","content":[{"type":"text","text":"Rewound answer"}]}}
+{"type":"last-prompt","lastPrompt":"Rewound prompt","leafUuid":"a3"}

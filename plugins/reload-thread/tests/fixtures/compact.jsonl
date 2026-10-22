@@ -1,0 +1,6 @@
+{"type":"user","uuid":"u1","parentUuid":null,"promptSource":"sdk","message":{"role":"user","content":"Old prompt"}}
+{"type":"assistant","uuid":"a1","parentUuid":"u1","message":{"id":"m1","role":"assistant","content":[{"type":"text","text":"Old answer"}]}}
+{"type":"system","subtype":"compact_boundary","uuid":"c1","parentUuid":null,"logicalParentUuid":"a1","content":"Conversation compacted"}
+{"type":"user","uuid":"cs","parentUuid":"c1","isCompactSummary":true,"isMeta":false,"message":{"role":"user","content":"This session is being continued... summary"}}
+{"type":"user","uuid":"u2","parentUuid":"cs","origin":{"kind":"human"},"message":{"role":"user","content":"After compaction"}}
+{"type":"assistant","uuid":"a2","parentUuid":"u2","message":{"id":"m2","role":"assistant","content":[{"type":"text","text":"Still here"}]}}
